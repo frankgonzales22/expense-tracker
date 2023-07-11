@@ -4,7 +4,7 @@ import './App.css'
 import { Display } from './Components/Display'
 
 function App() {
-  const items = [
+  const [items, setItems] = useState([
     {
       id : 1,
       desc: "Milk",
@@ -29,11 +29,11 @@ function App() {
       amount: 5,
       category: "entertainment"
     }
-  ]
+  ])
 
   return (
     <>
-      <Display item={items} onRemove={(a)=> console.log(a)}/>
+      {items && <Display item={items} onRemove={(id)=>setItems(items.filter(item => item.id !== id))}/>}
     </>
   )
 }

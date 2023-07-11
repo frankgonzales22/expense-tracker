@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+
+
 
 interface items {
     id: number,
@@ -14,8 +15,9 @@ interface Item {
 
 export const Display = ({ item, onRemove }: Item) => {
 
+    if (item.length < 1) return null;
 
-
+    // let totalAmount;
 
     return (
 
@@ -45,6 +47,15 @@ export const Display = ({ item, onRemove }: Item) => {
                         </td>
                     </tr>)}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>{item.reduce((acc, item) => item.amount + acc, 0).toFixed(2)}</td>
+                        {/* <td>{totalAmount = item.reduce((acc, item) => item.amount + acc, 0).toFixed(2)}</td> */}
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
             </table>
 
 
