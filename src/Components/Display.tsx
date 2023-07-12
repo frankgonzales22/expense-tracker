@@ -22,7 +22,6 @@ export const Display = ({ item, onRemove }: Item) => {
     return (
 
         <div className="container">
-
             <table className="table table-bordered">
                 <thead>
                     <tr>
@@ -50,16 +49,12 @@ export const Display = ({ item, onRemove }: Item) => {
                 <tfoot>
                     <tr>
                         <td>Total</td>
-                        <td>{item.reduce((acc, item) => item.amount + acc, 0).toFixed(2)}</td>
-                        {/* <td>{totalAmount = item.reduce((acc, item) => item.amount + acc, 0).toFixed(2)}</td> */}
+                        <td>&#8369; {item.reduce((acc, item) => item.amount + acc, 0).toFixed(2)}</td>
                         <td></td>
                         <td></td>
                     </tr>
                 </tfoot>
             </table>
-
-
-
         </div>
     )
 }
